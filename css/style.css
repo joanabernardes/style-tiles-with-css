@@ -1,11 +1,17 @@
-/* change these */
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400italic,800italic,400,800");
-/* @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap'); */
-@import url("https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic");
+/* @import url("https://use.typekit.net/otf7nsk.css"); */
 
 * {
   box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'pilowlavaregular';
+  src: url('pilowlava-regular-webfont.woff2') format('woff2'),
+       url('pilowlava-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
 
 /* THIS IS ALL meant for editing. You might want to do it differently, 
@@ -14,38 +20,128 @@ use the fonts in other ways in the font hierarchy etc. */
 
 /* change these */
 :root {
-  --bg-color: red;
-  --link-color: green;
-  --link-hover-color: blue;
-  --color-4: hotpink;
-  --color-5: rebeccapurple;
-
-  --primary-font: "Open Sans", sans-serif;
-  --secondary-font: "Droid Serif", serif;
+  --bg-color: #ceb38a;
+  --link-color: black;
+  --link-hover-color: #b33c3c;
+  --color-4: #D8D4D5;
+  --color-5: #E8E8E8;
+  --secondary-font: 'Cormorant Garamond', serif;
+  --primary-font: "Gopher", sans-serif;
   --main-text-color: #000;
 
   --white-space: 1rem;
 }
-
+.buttons {
+  width: 90%;
+  margin: 50px auto;
+  text-align: center;
+}
 button {
-  transition: all 3s;
+  margin: 20px;
+}
+.custom-btn {
+  padding: 10px 25px;
+  font-family: "degular-display", sans-serif;;
+  font-weight: 500;
+  font-size: 18px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+
+}
+.btn {
+  display: inline-block;
+padding: 0.5rem 1rem;
+text-align: center;
+text-decoration: none;
+text-transform: uppercase;
+margin-left: 1rem;
+font-family: "degular-display", sans-serif;
+font-weight: 500;
+font-size: 18px;
 }
 a {
   transition: all 3s;
 }
-button:hover {
-  background-color: var(--link-hover-color);
-  transform: scale(3) rotate(40deg);
+
+/* custom-btn btn-3 */
+
+.btn-3 {
+  width: 130px;
+  height: 42px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.btn-3 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-3:before,
+.btn-3:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  background: #000;
+  transition: all 0.3s ease;
+}
+.btn-3:before {
+  height: 0%;
+  width: 2px;
+}
+.btn-3:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-3:hover:before {
+  height: 100%;
+}
+.btn-3:hover:after {
+  width: 100%;
+}
+.btn-3 span:before,
+.btn-3 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  background: #000;
+  transition: all 0.3s ease;
+}
+.btn-3 span:before {
+  width: 2px;
+  height: 0%;
+}
+.btn-3 span:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-3 span:hover:before {
+  height: 100%;
+}
+.btn-3 span:hover:after {
+  width: 100%;
+}
+/* btn btn-simple */
+.btn-simple {
+  position: relative;
+  background-color: none;
+  z-index: 0;
+  overflow: hidden;
+  transition: all 0.25s ease-out;
 }
 
-button:active {
-  background-color: var(--bg-color);
+.btn-simple:hover,
+.btn-simple:focus {
+  transform: translateY(3px);
 }
 
-a:hover {
-  color: var(--link-hover-color);
-  font-size: 4rem;
-}
+
 html {
   font-size: 100%;
   font-family: var(--primary-font);
@@ -178,21 +274,6 @@ ul li:last-child {
   margin-bottom: 1rem;
 }
 
-button {
-  padding: 1rem;
-  border-radius: 4px;
-  background: var(--link-color);
-  text-align: center;
-  text-decoration: none;
-  font: bold 1.25em/1 var(--primary-font);
-  letter-spacing: 1px;
-  color: white;
-  text-transform: uppercase;
-  text-shadow: 0px -1px 0px #0374a0;
-  transition: all 0.2s ease;
-  cursor: pointer;
-  margin: 0 1rem 1rem 0;
-}
 
 .secondary-button {
   background: var(--color-5);
@@ -212,6 +293,11 @@ button:focus-within {
 .h1-sample {
   font-size: 2.4rem;
   font-weight: bold;
+  font-family: 'pilowlavaregular';
+  src: url() format('woff2'),
+       url('pilowlava-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 .h2-sample {
@@ -224,6 +310,8 @@ p.typography-sample {
   font-family: var(--secondary-font);
   line-height: 1.5;
   max-width: 960px;
+letter-spacing: 0.5px;
+font-size: 20px;
 }
 
 strong {
